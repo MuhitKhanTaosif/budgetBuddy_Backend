@@ -1,0 +1,35 @@
+Looking at your tour planner app design, I can see the core functionality involves users, trips, activities, and expense management. I'll create comprehensive ORM models using SQLAlchemy for FastAPI that cover all the use cases shown in your Figma designs.I've created comprehensive ORM models for your tour planner app that cover all the use cases shown in your Figma designs. Here's what the models include:
+
+## Core Models:
+
+1. **User** - Handles user authentication and profile information
+2. **Trip** - Main trip entity with moderator, participants, and trip details
+3. **TripDay** - Divides trips into days with descriptions
+4. **Activity** - Individual activities within each day (food, travel, party, etc.)
+5. **Expense** - Tracks all expenses (shared and personal)
+6. **ExpenseSplit** - Handles how expenses are split among participants
+
+## Supporting Models:
+
+7. **TripInvitation** - Manages invitation codes and email invitations
+8. **Settlement** - Tracks payments between users
+9. **TripNote** - Allows users to add notes to trips
+
+## Key Features Covered:
+
+- **Moderator System**: Each trip has a moderator who can manage the trip
+- **Invitation System**: Users can join trips via invitation codes
+- **Day-wise Planning**: Trips are organized into days with multiple activities
+- **Activity Management**: Activities have tags (food, travel, party, etc.), time slots, and cost tracking
+- **Expense Tracking**: Both shared and personal expenses with splitting functionality
+- **Settlement System**: Track who owes whom and payments made
+- **Note System**: Users can add private or shared notes
+
+## Relationships:
+
+- Many-to-many between trips and users (participants)
+- One-to-many from trips to days to activities
+- Complex expense splitting with tracking of settlements
+- Proper foreign key relationships for data integrity
+
+The models use SQLAlchemy's declarative base and include proper indexing, constraints, and relationships. You can use these models directly with FastAPI and PostgreSQL for your tour planner application.

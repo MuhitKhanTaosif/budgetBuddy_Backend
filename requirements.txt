@@ -1,0 +1,1 @@
+SQLAlchemy-2.0.41 greenlet-3.2.3 sqlmodel-0.0.24
